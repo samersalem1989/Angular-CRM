@@ -1,0 +1,34 @@
+<h1 class="animate__animated mb-5 ">Contacts</h1>
+<div class="container mt-2">
+  <div class="input-group">
+    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+        aria-label="Search" aria-describedby="basic-addon2" [(ngModel)]="search">
+    <div class="input-group-append">
+        <button class="btn btn-primary" type="button">
+            <i class="fas fa-search fa-sm"></i>
+        </button>
+    </div>
+</div>
+<table class="table table-hover">
+    <thead> 
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of (contacts | filterOne:search)">
+        <td><img src="{{contact.img}}"/></td>
+        <td>{{contact.first}}</td>
+        <td>{{contact.last}}</td>
+        <td>{{contact.email}}</td>
+        <td>{{contact.phone}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="submit" class="btn btn-primary mt-5 edit" ><a routerLink="/home">Go Back!</a></button>
+
+</div>

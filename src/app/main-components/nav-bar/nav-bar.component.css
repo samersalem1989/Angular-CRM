@@ -1,0 +1,10 @@
+a#dropdownBasic1 {
+    border: none;
+}
+
+img.img-profile.rounded-circle {
+    width: 36px;
+}
+#myDropDown {
+    cursor: pointer;
+}

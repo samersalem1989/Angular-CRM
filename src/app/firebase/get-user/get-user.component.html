@@ -1,0 +1,38 @@
+<h1 class="animate__animated mb-5 ">All Of My Users!</h1>
+<div class="container mt-2">
+  <div class="input-group">
+    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
+        aria-label="Search" aria-describedby="basic-addon2" [(ngModel)]="search">
+    <div class="input-group-append">
+        <button class="btn btn-primary" type="button">
+            <i class="fas fa-search fa-sm"></i>
+        </button>
+    </div>
+</div>
+<table class="table table-striped table-primary table-hover">
+    <thead> 
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Address</th>
+        <th scope="col"><i class="fas fa-trash-alt"></i><i class="fas fa-edit"></i></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of (users | filter:search),let i = index" (click)="chosenOne(i,user)">
+        <th scope="row">{{i+1}}</th>
+        <td>{{user.first}}</td>
+        <td>{{user.last}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.address}}</td>
+        <td><i class="fas fa-trash-alt" (click)="delete($event,user)"></i><i class="fas fa-edit" (click)="update(i,user)"></i></td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" class="btn btn-primary mt-3"><a routerLink="../add-user">Add Users!</a></button>
+  <button type="submit" class="btn btn-primary mt-5 edit" ><a routerLink="/home">Go Back!</a></button>
+
+
+</div>

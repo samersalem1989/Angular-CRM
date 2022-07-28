@@ -1,0 +1,52 @@
+<!-- <div class="container">
+    <div class="btn-group" role="group" aria-label="Basic example">
+        <button (click)="setData()" type="button" class="btn btn-secondary">Set</button>
+        <button (click)="getData()" type="button" class="btn btn-secondary">Get</button>
+        <button (click)="updateData()" type="button" class="btn btn-secondary">Update</button>
+        <button (click)="deleteData()" type="button" class="btn btn-secondary">Delete</button>
+    </div>
+</div> -->
+
+<!-- 
+
+
+ -->
+ <h1 class="animate__animated">Add Users To The List!</h1>
+<div class="container mt-2 animate__animated"  id="back">
+    <h1 class="text-xl-left">Add Users!</h1>
+ <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)" class="mt-5">
+    <div class="form">
+        <div class="form-content">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="First Name *"  name="firstName" #firstName [formControl]="myForm.controls['firstName']"/>
+                        <small *ngIf="!myForm.controls['firstName'].valid && myForm.controls['firstName'].touched" id="small"class="form-text">Please Enter your First Name!</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Last Name *"  name="lastName" #lastName [formControl]="myForm.controls['lastName']"/>
+                        <small *ngIf="!myForm.controls['lastName'].valid && myForm.controls['lastName'].touched" id="small"class="form-text">Please Enter your Last Name!</small>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Email Address *"  name="email" #email [formControl]="myForm.controls['email']"/>
+                        <small *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].touched" id="small"class="form-text">Please Enter your Email Address!</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Address *" name="address" #address [formControl]="myForm.controls['address']"/>
+                        <small *ngIf="!myForm.controls['address'].valid && myForm.controls['address'].touched" id="small"class="form-text">Please Enter your Address!</small>
+                    </div>
+                </div>
+            </div>
+            <button  [disabled]="!myForm.valid" type="submit" class="btn btn-primary mt-5" (click)='addToFirebase(firstName.value,lastName.value,email.value,address.value)'>Add!</button>
+            <button type="submit" class="btn btn-primary mt-5" ><a routerLink="../get-user">Show Users!</a></button>
+            <button type="submit" class="btn btn-primary mt-5" ><a routerLink="/home">Go Back!</a></button>
+        </div>
+        <hr> 
+        <div *ngIf="errorData" class="alert alert-danger mt-4" role="alert">
+            {{errorData}}
+          </div>
+    </div>
+</form>
+</div>

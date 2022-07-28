@@ -1,0 +1,101 @@
+<div id="me">
+     <h1 class="display-2 d-flex justify-content-center text-primary mt-2 animate__animated animate__fadeInDown"><b>Sign-Up With Firebase:</b></h1>
+     
+        <div class="fire">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+      </div>
+    <form class="col-md-4 col-md-offset-4 animate__animated animate__fadeInTopLeft" id="login" [formGroup]="myForm" (ngSubmit)="onSubmit(myForm.value)">
+                            <section id="inner-wrapper" class="login">
+                                <article>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <span class="input-group-addon bg-primary"><i class="fa fa-envelope"> </i></span>
+                                                <input type="text" class="form-control" placeholder="Email Address" name="email" #email [formControl]="myForm.controls['email']">
+                                            </div>
+                                                <small *ngIf="!myForm.controls['email'].valid && myForm.controls['email'].touched" id="small"class="form-text">Please Enter your Email Address!</small>
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <show-hide-password size="sm" btnStyle="primary" [btnOutline]="true">
+                                                <span class="input-group-addon bg-primary"><i class="fa fa-key"> </i></span>
+                                                <input type="password" class="form-control" placeholder="Password" name="password" id="password" #password [formControl]="myForm.controls['password']">
+                                            </show-hide-password>
+                                            </div>
+                                            <small *ngIf="!myForm.controls['password'].valid && myForm.controls['password'].touched" id="small" class="form-text">Please Enter your Password!</small>
+                                        </div>
+
+
+
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <show-hide-password size="sm" btnStyle="primary" [btnOutline]="true" id="myEye">
+                                                <span class="input-group-addon bg-primary"><i class="fas fa-check-circle"></i></span>
+                                                <input type="password" class="form-control" placeholder="Confirm Your Password" name="passwordConfirm" id="passwordConfirm" #passwordConfirm [formControl]="myForm.controls['passwordConfirm']">
+                                                </show-hide-password>
+                                            </div>
+                                            <small *ngIf="!myForm.controls['passwordConfirm'].valid && myForm.controls['passwordConfirm'].touched" id="small" class="form-text">Please Confirm your Password!</small>
+                                            <small *ngIf="password.value != passwordConfirm.value && myForm.controls['password'].touched && myForm.controls['passwordConfirm'].touched" id="small" class="form-text">Your Password doesn't match!</small>
+                                        </div>
+                                          <button [disabled]="!myForm.valid" (click)="signUp(email.value,password.value,passwordConfirm.value)" type="submit" class="btn btn-success btn-block bg-primary">Sign-Up!</button>
+                                </article>  
+                                <hr> 
+                                <small id="small" class="form-text"><a routerLink="/login" (click)="onActivate($event)">Already have an account? Click here to Login!</a></small>
+                                <div *ngIf="errorData" class="alert alert-danger mt-4" role="alert">
+                                    {{errorData}}
+                                  </div>
+                                   
+                            </section>
+    
+                        </form>
+                        
+                    </div>

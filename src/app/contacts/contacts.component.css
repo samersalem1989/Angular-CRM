@@ -1,0 +1,30 @@
+img {
+    width: 33px;
+}
+
+a {
+    color: #f3f4f7;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+h1.animate__animated {
+    text-align: center;
+    font-family: futura;
+    font-style: italic;
+    width:100%;
+    color:#313131;
+    font-size:45px;
+    font-weight: bold;
+  }
+
+  table{
+    font-family: futura;
+    color: black;
+    /* cursor: pointer; */
+  }
+  button{
+    font-family: futura;
+  }
+
+

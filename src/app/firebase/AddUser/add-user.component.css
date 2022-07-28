@@ -1,0 +1,42 @@
+#back {
+    background-color: #4e73df;
+    border: 1px;
+    border-radius: 8%;
+}
+
+h1{
+    color:#313131;
+    font-family: futura;
+    padding-top: 20px;
+    font-size:20px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+h1.animate__animated {
+    text-align: center;
+    font-family: futura;
+    font-style: italic;
+    width:100%;
+    color:#313131;
+    font-size:45px;
+    font-weight: bold;
+    /* animation:colorchange 20s infinite alternate; */
+  }
+
+#small {
+    color: black;
+    font-family: futura;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    font-family: futura;
+}
+
+input{
+    color: black;
+    font-family: futura;
+}
+
